@@ -7,6 +7,7 @@ function Home () {
 
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
+  
   const getMovies = async () => {
     const json = await ( 
       await fetch(
@@ -30,7 +31,8 @@ function Home () {
            <h1>loading...</h1>
          </div>
       ) : (
-        <div>
+        <div> 
+            <h1>Movie List ({movies.length})</h1>
             <div className={styles.movies}>
             {movies.map((movie) => (
             <Movie
